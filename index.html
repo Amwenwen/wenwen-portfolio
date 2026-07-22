@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wenwen — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">W</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+    <div class="loader-text">Loading Experience...</div>
+  </div>
+</div>
+
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+
+
+<!-- Scroll Progress -->
+<div id="scroll-progress"><div id="scroll-bar"></div></div>
+
+<!-- Sidebar -->
+<nav id="sidebar" class="sidebar">
+  <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
+    <span class="toggle-icon"><i class="fa-solid fa-bars"></i></span>
+  </button>
+  <div class="sidebar-logo">W</div>
+  <ul class="sidebar-menu">
+    <li><a href="#hero" class="nav-item active" data-section="hero"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+    <li><a href="#about" class="nav-item" data-section="about"><i class="fa-solid fa-user"></i><span>About Me</span></a></li>
+    <li><a href="#skills" class="nav-item" data-section="skills"><i class="fa-solid fa-code"></i><span>Skills</span></a></li>
+    <li><a href="#projects" class="nav-item" data-section="projects"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a></li>
+    <li><a href="#certificates" class="nav-item" data-section="certificates"><i class="fa-solid fa-certificate"></i><span>Certificates</span></a></li>
+    <li><a href="#gallery" class="nav-item" data-section="gallery"><i class="fa-solid fa-images"></i><span>Gallery</span></a></li>
+    <li><a href="#experience" class="nav-item" data-section="experience"><i class="fa-solid fa-briefcase"></i><span>Experience</span></a></li>
+    <li><a href="#contact" class="nav-item" data-section="contact"><i class="fa-solid fa-envelope"></i><span>Contact</span></a></li>
+  </ul>
+  <div class="sidebar-bottom">
+    <button class="sidebar-action" id="chat-btn" title="Chat"><i class="fa-solid fa-comment-dots"></i><span>Chat</span></button>
+    <button class="sidebar-action" id="login-btn" title="Login"><i class="fa-solid fa-lock"></i><span>Login</span></button>
+    <button class="sidebar-action" id="music-btn" title="Music"><i class="fa-solid fa-music"></i><span>Music</span></button>
+    <button class="sidebar-action" id="theme-btn" title="Theme"><i class="fa-solid fa-palette"></i><span>Theme</span></button>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main id="main-content">
+
+<!-- Hero Section -->
+<section id="hero" class="section hero-section">
+  <canvas id="particle-canvas"></canvas>
+  <div class="hero-bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-image-wrapper">
+      <div class="hero-image-ring"></div>
+      <img src="assets/images/profile.jpg" alt="Wenwen" class="hero-image" id="hero-img" onerror="this.src='https://ui-avatars.com/api/?name=Wenwen&background=FF7A00&color=fff&size=300'">
+    </div>
+    <div class="hero-text">
+      <div class="hero-greeting chip">👋 Welcome to my Portfolio</div>
+      <h1 class="hero-name">Hi, I'm <span class="accent-text">Wenwen</span></h1>
+      <div class="hero-typed-wrapper">
+        <span class="hero-typed-prefix">I'm a </span>
+        <span id="typed-text" class="hero-typed"></span>
+        <span class="typed-cursor">|</span>
+      </div>
+      <p class="hero-desc">Passionate about creating stunning digital experiences, solving complex problems, and building technology that matters.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary"><i class="fa-solid fa-rocket"></i> View Projects</a>
+        <a href="#contact" class="btn-ghost"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
+      </div>
+      <div class="hero-socials">
+        <a href="#" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" class="social-icon" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-pill"><strong>4+</strong><span>Years Learning</span></div>
+        <div class="stat-pill"><strong>20+</strong><span>Projects Done</span></div>
+        <div class="stat-pill"><strong>6</strong><span>Certifications</span></div>
+        <div class="stat-pill"><strong>100%</strong><span>Dedication</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-wheel"></div>
+    <span>Scroll Down</span>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section about-section">
+  <div class="section-header">
+    <span class="section-label">Get to know me</span>
+    <h2 class="section-title">About <span class="accent-text">Me</span></h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-image-col">
+      <div class="about-img-wrapper card">
+        <img src="assets/images/about.jpg" alt="About Wenwen" class="about-img" onerror="this.src='https://ui-avatars.com/api/?name=Wenwen&background=FF7A00&color=fff&size=400'">
+        <div class="about-img-badge chip"><i class="fa-solid fa-star"></i> Available for Work</div>
+      </div>
+    </div>
+    <div class="about-info-col">
+      <div class="about-bio card">
+        <h3>Who Am I?</h3>
+        <p>I'm a passionate IT professional and creative developer based in the Philippines. I specialize in Computer System Servicing, Networking, Web Development, and UI Design.</p>
+        <p>My journey in technology started with curiosity and grew into a deep passion for creating meaningful digital experiences that solve real-world problems.</p>
+        <div class="about-details">
+          <div class="detail-item"><i class="fa-solid fa-map-marker-alt accent-text"></i><span>Philippines</span></div>
+          <div class="detail-item"><i class="fa-solid fa-graduation-cap accent-text"></i><span>IT Graduate</span></div>
+          <div class="detail-item"><i class="fa-solid fa-heart accent-text"></i><span>Open to Opportunities</span></div>
+        </div>
+      </div>
+      <div class="about-hobbies card">
+        <h4>Hobbies & Interests</h4>
+        <div class="hobby-tags">
+          <span class="tag"><i class="fa-solid fa-code"></i> Coding</span>
+          <span class="tag"><i class="fa-solid fa-camera"></i> Photography</span>
+          <span class="tag"><i class="fa-solid fa-gamepad"></i> Gaming</span>
+          <span class="tag"><i class="fa-solid fa-music"></i> Music</span>
+          <span class="tag"><i class="fa-solid fa-book"></i> Reading</span>
+          <span class="tag"><i class="fa-solid fa-paint-brush"></i> Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Education Timeline -->
+  <div class="timeline-wrapper">
+    <h3 class="timeline-title">Education Timeline</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card card">
+          <span class="timeline-year">2020 — 2024</span>
+          <h4>Bachelor of Science in Information Technology</h4>
+          <p>Focused on software development, networking, and system administration.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card card">
+          <span class="timeline-year">2018 — 2020</span>
+          <h4>Senior High School — ICT Track</h4>
+          <p>Specialized in Information and Communications Technology with NCII certifications.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card card">
+          <span class="timeline-year">2014 — 2018</span>
+          <h4>Junior High School</h4>
+          <p>Built foundation in mathematics, science, and early programming concepts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="section skills-section">
+  <div class="section-header">
+    <span class="section-label">What I do</span>
+    <h2 class="section-title">My <span class="accent-text">Skills</span></h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card" data-skill="HTML5">
+      <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+      <h4>HTML5</h4>
+      <div class="skill-bar"><div class="skill-fill" data-percent="95"></div></div>
+      <span class="skill-percent">95%</span>
+    </div>
+    <div class="skill-card" data-skill="CSS3">
+      <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+      <h4>CSS3</h4>
+      <div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
+      <span class="skill-percent">90%</span>
+    </div>
+    <div class="skill-card" data-skill="JavaScript">
+      <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+      <h4>JavaScript</h4>
+      <div class="skill-bar"><div class="skill-fill" data-percent="85"></div></div>
+      <span class="skill-percent">85%</span>
+    </div>
+    <div class="skill-card" data-skill="Python">
+      <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+      <h4>Python</h4>
+      <div class="skill-bar"><div class="skill-fill" data-percent="75"></div></div>
+      <span class="skill-percent">75%</span>
+    </div>
+    <div class="skill-card" data-skill="CSS">
+      <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+      <h4>Computer Servicing</h4>
+      <div class="skill-bar"><div class="skill-fill" data-percent="92"></div></div>
+      <span class="skill-percent">92%</span>
+    </div>
+    <div class="skill-card" data-skill="Networking">
+      <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
+      <h4>Networking</h4>
+      <div class="skill-bar"><div class="skill-fill" data-percent="88"></div></div>
+      <span class="skill-percent">88%</span>
+    </div>
+    <div class="skill-card" data-skill="UI Design">
+      <div class="skill-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+      <h4>UI Design</h4>
+      <div class="skill-bar"><div class="skill-fill" data-percent="80"></div></div>
+      <span class="skill-percent">80%</span>
+    </div>
+    <div class="skill-card" data-skill="Database">
+      <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+      <h4>Database</h4>
+      <div class="skill-bar"><div class="skill-fill" data-percent="78"></div></div>
+      <span class="skill-percent">78%</span>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section projects-section">
+  <div class="section-header">
+    <span class="section-label">What I've built</span>
+    <h2 class="section-title">My <span class="accent-text">Projects</span></h2>
+  </div>
+  <div class="projects-filter">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="web">Web</button>
+    <button class="filter-btn" data-filter="design">Design</button>
+    <button class="filter-btn" data-filter="network">Network</button>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card" data-category="web">
+      <div class="project-img-wrap">
+        <img src="assets/images/project1.jpg" alt="Project 1" onerror="this.src='https://via.placeholder.com/400x250/1a1a1a/FF7A00?text=Project+1'">
+        <div class="project-overlay"><i class="fa-solid fa-eye"></i></div>
+      </div>
+      <div class="project-info">
+        <div class="project-tags"><span class="p-tag">HTML</span><span class="p-tag">CSS</span><span class="p-tag">JS</span></div>
+        <h3>E-Commerce Website</h3>
+        <p>A fully responsive online store with cart functionality, product filtering, and smooth animations.</p>
+        <div class="project-links">
+          <a href="#" class="btn-sm"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#" class="btn-sm btn-orange"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card" data-category="design">
+      <div class="project-img-wrap">
+        <img src="assets/images/project2.jpg" alt="Project 2" onerror="this.src='https://via.placeholder.com/400x250/1a1a1a/FF7A00?text=Project+2'">
+        <div class="project-overlay"><i class="fa-solid fa-eye"></i></div>
+      </div>
+      <div class="project-info">
+        <div class="project-tags"><span class="p-tag">Figma</span><span class="p-tag">UI/UX</span></div>
+        <h3>Mobile App UI Design</h3>
+        <p>Premium mobile application interface design with modern glassmorphism aesthetics.</p>
+        <div class="project-links">
+          <a href="#" class="btn-sm"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#" class="btn-sm btn-orange"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card" data-category="network">
+      <div class="project-img-wrap">
+        <img src="assets/images/project3.jpg" alt="Project 3" onerror="this.src='https://via.placeholder.com/400x250/1a1a1a/FF7A00?text=Project+3'">
+        <div class="project-overlay"><i class="fa-solid fa-eye"></i></div>
+      </div>
+      <div class="project-info">
+        <div class="project-tags"><span class="p-tag">Cisco</span><span class="p-tag">LAN</span></div>
+        <h3>Network Infrastructure Setup</h3>
+        <p>Complete LAN setup for a small office with VLAN configuration and security protocols.</p>
+        <div class="project-links">
+          <a href="#" class="btn-sm"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#" class="btn-sm btn-orange"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card" data-category="web">
+      <div class="project-img-wrap">
+        <img src="assets/images/project4.jpg" alt="Project 4" onerror="this.src='https://via.placeholder.com/400x250/1a1a1a/FF7A00?text=Project+4'">
+        <div class="project-overlay"><i class="fa-solid fa-eye"></i></div>
+      </div>
+      <div class="project-info">
+        <div class="project-tags"><span class="p-tag">Python</span><span class="p-tag">Flask</span></div>
+        <h3>Task Management App</h3>
+        <p>A full-stack task management application with user authentication and real-time updates.</p>
+        <div class="project-links">
+          <a href="#" class="btn-sm"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#" class="btn-sm btn-orange"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certificates Section -->
+<section id="certificates" class="section certs-section">
+  <div class="section-header">
+    <span class="section-label">My achievements</span>
+    <h2 class="section-title">My <span class="accent-text">Certificates</span></h2>
+  </div>
+  <div class="certs-grid">
+    <div class="cert-card" data-cert="1">
+      <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+      <h4>Computer System Servicing NC II</h4>
+      <p>TESDA — Technical Education and Skills Development Authority</p>
+      <span class="cert-year">2022</span>
+      <button class="cert-view-btn">View Certificate</button>
+    </div>
+    <div class="cert-card" data-cert="2">
+      <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+      <h4>Network Infrastructure Setup</h4>
+      <p>Cisco Networking Academy</p>
+      <span class="cert-year">2023</span>
+      <button class="cert-view-btn">View Certificate</button>
+    </div>
+    <div class="cert-card" data-cert="3">
+      <div class="cert-icon"><i class="fa-solid fa-medal"></i></div>
+      <h4>Web Development Fundamentals</h4>
+      <p>freeCodeCamp</p>
+      <span class="cert-year">2023</span>
+      <button class="cert-view-btn">View Certificate</button>
+    </div>
+    <div class="cert-card" data-cert="4">
+      <div class="cert-icon"><i class="fa-solid fa-trophy"></i></div>
+      <h4>Python for Everybody</h4>
+      <p>Coursera — University of Michigan</p>
+      <span class="cert-year">2024</span>
+      <button class="cert-view-btn">View Certificate</button>
+    </div>
+    <div class="cert-card" data-cert="5">
+      <div class="cert-icon"><i class="fa-solid fa-star"></i></div>
+      <h4>UI/UX Design Fundamentals</h4>
+      <p>Google UX Design Certificate</p>
+      <span class="cert-year">2024</span>
+      <button class="cert-view-btn">View Certificate</button>
+    </div>
+    <div class="cert-card" data-cert="6">
+      <div class="cert-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <h4>Cybersecurity Essentials</h4>
+      <p>Cisco Networking Academy</p>
+      <span class="cert-year">2024</span>
+      <button class="cert-view-btn">View Certificate</button>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="section gallery-section">
+  <div class="section-header">
+    <span class="section-label">Captured moments</span>
+    <h2 class="section-title">My <span class="accent-text">Gallery</span></h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item" data-src="assets/images/gallery1.jpg"><img src="assets/images/gallery1.jpg" alt="Gallery 1" onerror="this.src='https://picsum.photos/400/300?random=1'"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></div>
+    <div class="gallery-item tall" data-src="assets/images/gallery2.jpg"><img src="assets/images/gallery2.jpg" alt="Gallery 2" onerror="this.src='https://picsum.photos/400/600?random=2'"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></div>
+    <div class="gallery-item" data-src="assets/images/gallery3.jpg"><img src="assets/images/gallery3.jpg" alt="Gallery 3" onerror="this.src='https://picsum.photos/400/300?random=3'"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></div>
+    <div class="gallery-item wide" data-src="assets/images/gallery4.jpg"><img src="assets/images/gallery4.jpg" alt="Gallery 4" onerror="this.src='https://picsum.photos/800/300?random=4'"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></div>
+    <div class="gallery-item" data-src="assets/images/gallery5.jpg"><img src="assets/images/gallery5.jpg" alt="Gallery 5" onerror="this.src='https://picsum.photos/400/300?random=5'"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></div>
+    <div class="gallery-item" data-src="assets/images/gallery6.jpg"><img src="assets/images/gallery6.jpg" alt="Gallery 6" onerror="this.src='https://picsum.photos/400/300?random=6'"><div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div></div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="section exp-section">
+  <div class="section-header">
+    <span class="section-label">My journey</span>
+    <h2 class="section-title">Work <span class="accent-text">Experience</span></h2>
+  </div>
+  <div class="exp-timeline">
+    <div class="exp-item">
+      <div class="exp-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div><h3>IT Support Specialist</h3><span class="exp-company">TechCorp Philippines</span></div>
+          <span class="exp-period">2024 — Present</span>
+        </div>
+        <p>Providing technical support, maintaining network infrastructure, and troubleshooting hardware and software issues for 200+ employees.</p>
+        <div class="exp-tags"><span class="tag">Networking</span><span class="tag">Hardware</span><span class="tag">Windows Server</span></div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div><h3>Web Developer Intern</h3><span class="exp-company">Digital Agency PH</span></div>
+          <span class="exp-period">2023 — 2024</span>
+        </div>
+        <p>Developed and maintained client websites, collaborated with design teams, and implemented responsive layouts using modern web technologies.</p>
+        <div class="exp-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div><h3>Freelance UI Designer</h3><span class="exp-company">Self-Employed</span></div>
+          <span class="exp-period">2022 — 2023</span>
+        </div>
+        <p>Designed user interfaces and brand identities for local businesses, creating visually appealing and user-friendly digital experiences.</p>
+        <div class="exp-tags"><span class="tag">Figma</span><span class="tag">UI/UX</span><span class="tag">Branding</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section contact-section">
+  <div class="section-header">
+    <span class="section-label">Let's talk</span>
+    <h2 class="section-title">Get In <span class="accent-text">Touch</span></h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+        <h4>Email</h4>
+        <p>wenwen@example.com</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+        <h4>Phone</h4>
+        <p>+63 912 345 6789</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <h4>Location</h4>
+        <p>Philippines</p>
+      </div>
+    </div>
+    <form class="contact-form" id="contact-form">
+      <h3>Send a Message</h3>
+      <div class="form-group">
+        <input type="text" id="cf-name" placeholder=" " required>
+        <label for="cf-name">Your Name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" id="cf-email" placeholder=" " required>
+        <label for="cf-email">Your Email</label>
+      </div>
+      <div class="form-group">
+        <input type="text" id="cf-subject" placeholder=" " required>
+        <label for="cf-subject">Subject</label>
+      </div>
+      <div class="form-group">
+        <textarea id="cf-msg" rows="5" placeholder=" " required></textarea>
+        <label for="cf-msg">Your Message</label>
+      </div>
+      <button type="submit" class="btn-primary full-width"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+      <div class="form-status" id="form-status"></div>
+    </form>
+  </div>
+</section>
+
+</main><!-- /main-content -->
+
+<!-- Floating Like Button -->
+<div id="like-btn" class="like-float">
+  <i class="fa-solid fa-heart"></i>
+  <span id="like-count">0</span>
+</div>
+
+<!-- Scroll to Top -->
+<button id="scroll-top" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Certificate Modal -->
+<div id="cert-modal" class="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" id="cert-modal-close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="cert-modal-content">
+      <div class="cert-modal-icon"><i class="fa-solid fa-award"></i></div>
+      <h3 id="cert-modal-title">Certificate Title</h3>
+      <p id="cert-modal-org">Organization</p>
+      <img id="cert-modal-img" src="" alt="Certificate" style="display:none">
+    </div>
+  </div>
+</div>
+
+<!-- Gallery Lightbox -->
+<div id="lightbox" class="modal-overlay">
+  <div class="lightbox-inner">
+    <button class="modal-close" id="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-nav" id="lb-prev"><i class="fa-solid fa-chevron-left"></i></button>
+    <img id="lightbox-img" src="" alt="Gallery">
+    <button class="lightbox-nav" id="lb-next"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+</div>
+
+<!-- Chat Widget -->
+<div id="chat-widget" class="chat-widget">
+  <div class="chat-header">
+    <div class="chat-header-info"><div class="chat-avatar">W</div><div><strong>Wenwen</strong><span class="chat-status">Online</span></div></div>
+    <button id="chat-close" class="chat-close-btn"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="chat-messages" id="chat-messages">
+    <div class="chat-msg bot"><div class="chat-bubble">👋 Hi! I'm Wenwen. How can I help you today?</div></div>
+  </div>
+  <div class="chat-emoji-picker" id="emoji-picker" style="display:none">
+    😀 😊 😂 🔥 ❤️ 👍 🎉 ✨ 💯 🙏 😎 🤔
+  </div>
+  <div class="chat-input-row">
+    <button id="emoji-btn" class="chat-tool-btn"><i class="fa-solid fa-face-smile"></i></button>
+    <label class="chat-tool-btn" for="chat-file"><i class="fa-solid fa-paperclip"></i></label>
+    <input type="file" id="chat-file" style="display:none" accept="image/*">
+    <input type="text" id="chat-input" placeholder="Type a message...">
+    <button id="chat-send" class="chat-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<!-- Login Modal -->
+<div id="login-modal" class="modal-overlay">
+  <div class="modal-box login-card">
+    <button class="modal-close" id="login-modal-close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="login-icon"><i class="fa-solid fa-lock"></i></div>
+    <h3>Admin Access</h3>
+    <p>Enter credentials to access the dashboard</p>
+    <form id="login-form">
+      <div class="form-group">
+        <input type="text" id="login-user" placeholder=" " autocomplete="off">
+        <label for="login-user">Username</label>
+      </div>
+      <div class="form-group">
+        <input type="password" id="login-pass" placeholder=" ">
+        <label for="login-pass">Password</label>
+      </div>
+      <div id="login-error" class="login-error"></div>
+      <button type="submit" class="btn-primary full-width"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+    </form>
+  </div>
+</div>
+
+<!-- Admin Dashboard -->
+<div id="admin-dashboard" class="admin-dashboard" style="display:none">
+  <div class="admin-sidebar">
+    <div class="admin-logo">Admin</div>
+    <ul class="admin-nav">
+      <li><a href="#" class="admin-link active" data-page="dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+      <li><a href="#" class="admin-link" data-page="editor"><i class="fa-solid fa-pen-to-square"></i> Portfolio Editor</a></li>
+      <li><a href="#" class="admin-link" data-page="inbox"><i class="fa-solid fa-inbox"></i> Chat Inbox <span class="badge" id="inbox-badge">0</span></a></li>
+      <li><a href="#" class="admin-link" data-page="notifications"><i class="fa-solid fa-bell"></i> Notifications <span class="badge" id="notif-badge">0</span></a></li>
+      <li><a href="#" class="admin-link" data-page="analytics"><i class="fa-solid fa-chart-line"></i> Analytics</a></li>
+    </ul>
+    <button id="admin-logout" class="admin-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+  </div>
+  <div class="admin-main">
+    <!-- Dashboard Page -->
+    <div class="admin-page active" id="page-dashboard">
+      <h2>Dashboard</h2>
+      <div class="dash-stats">
+        <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-users"></i></div><div><h3 id="stat-visitors">1,247</h3><p>Total Visitors</p></div></div>
+        <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-comments"></i></div><div><h3 id="stat-chats">38</h3><p>Total Chats</p></div></div>
+        <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-heart"></i></div><div><h3 id="stat-likes">0</h3><p>Total Likes</p></div></div>
+        <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-bell"></i></div><div><h3 id="stat-notifs">5</h3><p>Notifications</p></div></div>
+      </div>
+      <div class="dash-chart-wrap">
+        <h4>Visitor Activity (Last 7 Days)</h4>
+        <canvas id="visitors-chart" height="80"></canvas>
+      </div>
+    </div>
+    <!-- Editor Page -->
+    <div class="admin-page" id="page-editor">
+      <h2>Portfolio Editor</h2>
+
+      <!-- Editor Sub-tabs -->
+      <div class="editor-tabs">
+        <button class="editor-tab active" data-tab="tab-hero"><i class="fa-solid fa-house"></i> Hero</button>
+        <button class="editor-tab" data-tab="tab-about"><i class="fa-solid fa-user"></i> About</button>
+        <button class="editor-tab" data-tab="tab-skills"><i class="fa-solid fa-code"></i> Skills</button>
+        <button class="editor-tab" data-tab="tab-projects"><i class="fa-solid fa-briefcase"></i> Projects</button>
+        <button class="editor-tab" data-tab="tab-certs"><i class="fa-solid fa-award"></i> Certs</button>
+        <button class="editor-tab" data-tab="tab-exp"><i class="fa-solid fa-clock-rotate-left"></i> Experience</button>
+        <button class="editor-tab" data-tab="tab-contact"><i class="fa-solid fa-envelope"></i> Contact</button>
+        <button class="editor-tab" data-tab="tab-theme"><i class="fa-solid fa-palette"></i> Theme</button>
+      </div>
+
+      <!-- HERO TAB -->
+      <div class="editor-tab-content active" id="tab-hero">
+        <div class="editor-section">
+          <h4><i class="fa-solid fa-house"></i> Hero Section</h4>
+          <div class="editor-form">
+            <label>Your Name <input type="text" id="e-name" placeholder="Wenwen"></label>
+            <label>Job Title / Role <input type="text" id="e-title" placeholder="IT Professional & Developer"></label>
+            <label>Hero Description <textarea id="e-herodesc" rows="3" placeholder="Passionate about creating stunning digital experiences..."></textarea></label>
+            <label>Typed Roles (comma separated) <input type="text" id="e-typed" placeholder="IT Professional, Web Developer, UI Designer"></label>
+            <label>Stat 1 Label <input type="text" id="e-stat1label" placeholder="Years Learning"></label>
+            <label>Stat 1 Value <input type="text" id="e-stat1val" placeholder="4+"></label>
+            <label>Stat 2 Label <input type="text" id="e-stat2label" placeholder="Projects Done"></label>
+            <label>Stat 2 Value <input type="text" id="e-stat2val" placeholder="20+"></label>
+            <label>Stat 3 Label <input type="text" id="e-stat3label" placeholder="Certifications"></label>
+            <label>Stat 3 Value <input type="text" id="e-stat3val" placeholder="6"></label>
+            <label>Stat 4 Label <input type="text" id="e-stat4label" placeholder="Dedication"></label>
+            <label>Stat 4 Value <input type="text" id="e-stat4val" placeholder="100%"></label>
+          </div>
+          <div class="editor-section" style="margin-top:16px;padding:0;border:none;box-shadow:none;">
+            <h4 style="font-size:0.85rem;margin-bottom:10px;"><i class="fa-solid fa-image"></i> Profile Photo</h4>
+            <div class="img-upload-area" id="img-upload-area">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <p>Drag & drop or click to upload</p>
+              <input type="file" id="profile-upload" accept="image/*" style="position:absolute;inset:0;opacity:0;cursor:pointer">
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+            <label>GitHub URL <input type="url" id="e-github" placeholder="https://github.com/"></label>
+            <label>LinkedIn URL <input type="url" id="e-linkedin" placeholder="https://linkedin.com/in/"></label>
+            <label>Facebook URL <input type="url" id="e-facebook" placeholder="https://facebook.com/"></label>
+            <label>Instagram URL <input type="url" id="e-instagram" placeholder="https://instagram.com/"></label>
+          </div>
+          <button class="btn-primary" style="margin-top:18px" onclick="saveSection('hero')"><i class="fa-solid fa-floppy-disk"></i> Save Hero</button>
+        </div>
+      </div>
+
+      <!-- ABOUT TAB -->
+      <div class="editor-tab-content" id="tab-about">
+        <div class="editor-section">
+          <h4><i class="fa-solid fa-user"></i> About Section</h4>
+          <div class="editor-form">
+            <label>Bio Paragraph 1 <textarea id="e-bio1" rows="3" placeholder="I'm a passionate IT professional..."></textarea></label>
+            <label>Bio Paragraph 2 <textarea id="e-bio2" rows="3" placeholder="My journey in technology..."></textarea></label>
+            <label>Location <input type="text" id="e-location" placeholder="Philippines"></label>
+            <label>Education/Status <input type="text" id="e-education" placeholder="IT Graduate"></label>
+            <label>Availability <input type="text" id="e-availability" placeholder="Open to Opportunities"></label>
+            <label>Hobbies (comma separated) <input type="text" id="e-hobbies" placeholder="Coding, Photography, Gaming, Music"></label>
+          </div>
+          <h4 style="margin:18px 0 10px;font-size:0.9rem;"><i class="fa-solid fa-graduation-cap"></i> Education Timeline</h4>
+          <div class="editor-form" id="edu-timeline-editor">
+            <div class="timeline-entry-edit">
+              <label>Entry 1 — Year <input type="text" id="e-edu1year" placeholder="2020 — 2024"></label>
+              <label>Entry 1 — Title <input type="text" id="e-edu1title" placeholder="Bachelor of Science in IT"></label>
+              <label>Entry 1 — Description <input type="text" id="e-edu1desc" placeholder="Focused on software development..."></label>
+            </div>
+            <div class="timeline-entry-edit">
+              <label>Entry 2 — Year <input type="text" id="e-edu2year" placeholder="2018 — 2020"></label>
+              <label>Entry 2 — Title <input type="text" id="e-edu2title" placeholder="Senior High School — ICT Track"></label>
+              <label>Entry 2 — Description <input type="text" id="e-edu2desc" placeholder="Specialized in ICT..."></label>
+            </div>
+            <div class="timeline-entry-edit">
+              <label>Entry 3 — Year <input type="text" id="e-edu3year" placeholder="2014 — 2018"></label>
+              <label>Entry 3 — Title <input type="text" id="e-edu3title" placeholder="Junior High School"></label>
+              <label>Entry 3 — Description <input type="text" id="e-edu3desc" placeholder="Built foundation..."></label>
+            </div>
+          </div>
+          <button class="btn-primary" style="margin-top:18px" onclick="saveSection('about')"><i class="fa-solid fa-floppy-disk"></i> Save About</button>
+        </div>
+      </div>
+
+      <!-- SKILLS TAB -->
+      <div class="editor-tab-content" id="tab-skills">
+        <div class="editor-section">
+          <h4><i class="fa-solid fa-code"></i> Skills</h4>
+          <div class="editor-form" id="skills-editor"></div>
+          <button class="btn-primary" style="margin-top:18px" onclick="saveSection('skills')"><i class="fa-solid fa-floppy-disk"></i> Save Skills</button>
+        </div>
+      </div>
+
+      <!-- PROJECTS TAB -->
+      <div class="editor-tab-content" id="tab-projects">
+        <div class="editor-section">
+          <h4><i class="fa-solid fa-briefcase"></i> Projects</h4>
+          <div id="projects-editor"></div>
+          <button class="btn-primary" style="margin-top:18px" onclick="saveSection('projects')"><i class="fa-solid fa-floppy-disk"></i> Save Projects</button>
+        </div>
+      </div>
+
+      <!-- CERTIFICATES TAB -->
+      <div class="editor-tab-content" id="tab-certs">
+        <div class="editor-section">
+          <h4><i class="fa-solid fa-award"></i> Certificates</h4>
+          <div id="certs-editor"></div>
+          <button class="btn-primary" style="margin-top:18px" onclick="saveSection('certs')"><i class="fa-solid fa-floppy-disk"></i> Save Certificates</button>
+        </div>
+      </div>
+
+      <!-- EXPERIENCE TAB -->
+      <div class="editor-tab-content" id="tab-exp">
+        <div class="editor-section">
+          <h4><i class="fa-solid fa-clock-rotate-left"></i> Work Experience</h4>
+          <div id="exp-editor"></div>
+          <button class="btn-primary" style="margin-top:18px" onclick="saveSection('experience')"><i class="fa-solid fa-floppy-disk"></i> Save Experience</button>
+        </div>
+      </div>
+
+      <!-- CONTACT TAB -->
+      <div class="editor-tab-content" id="tab-contact">
+        <div class="editor-section">
+          <h4><i class="fa-solid fa-envelope"></i> Contact Info</h4>
+          <div class="editor-form">
+            <label>Email <input type="email" id="e-email" placeholder="wenwen@example.com"></label>
+            <label>Phone <input type="text" id="e-phone" placeholder="+63 912 345 6789"></label>
+            <label>Location <input type="text" id="e-contactlocation" placeholder="Philippines"></label>
+          </div>
+          <button class="btn-primary" style="margin-top:18px" onclick="saveSection('contact')"><i class="fa-solid fa-floppy-disk"></i> Save Contact</button>
+        </div>
+      </div>
+
+      <!-- THEME TAB -->
+      <div class="editor-tab-content" id="tab-theme">
+        <div class="editor-section">
+          <h4><i class="fa-solid fa-palette"></i> Theme & Colors</h4>
+          <div class="color-editor">
+            <label>Accent Color <input type="color" id="e-accent" value="#FF6B00"></label>
+            <label>Background <input type="color" id="e-bg" value="#FFFFFF"></label>
+            <label>Text Color <input type="color" id="e-textcolor" value="#1A1A2E"></label>
+          </div>
+          <h4 style="margin:20px 0 12px;font-size:0.9rem;">Quick Presets</h4>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button class="btn-sm" onclick="applyPreset('orange')">🟠 Orange (Default)</button>
+            <button class="btn-sm" onclick="applyPreset('blue')">🔵 Blue</button>
+            <button class="btn-sm" onclick="applyPreset('green')">🟢 Green</button>
+            <button class="btn-sm" onclick="applyPreset('purple')">🟣 Purple</button>
+            <button class="btn-sm" onclick="applyPreset('dark')">⚫ Dark Mode</button>
+          </div>
+          <button class="btn-primary" style="margin-top:18px" onclick="saveSection('theme')"><i class="fa-solid fa-floppy-disk"></i> Save Theme</button>
+        </div>
+      </div>
+
+    </div>
+    <!-- Inbox Page -->
+    <div class="admin-page" id="page-inbox">
+      <h2>Chat Inbox</h2>
+      <div id="inbox-list" class="inbox-list"></div>
+    </div>
+    <!-- Notifications Page -->
+    <div class="admin-page" id="page-notifications">
+      <h2>Notifications</h2>
+      <div id="notif-list" class="notif-list"></div>
+    </div>
+    <!-- Analytics Page -->
+    <div class="admin-page" id="page-analytics">
+      <h2>Visitor Analytics</h2>
+      <div class="analytics-grid">
+        <div class="analytics-card"><h4>Monthly Visits</h4><canvas id="monthly-chart" height="120"></canvas></div>
+        <div class="analytics-card"><h4>Device Usage</h4><canvas id="device-chart" height="120"></canvas></div>
+        <div class="analytics-card"><h4>Browser Usage</h4><canvas id="browser-chart" height="120"></canvas></div>
+        <div class="analytics-card"><h4>Most Viewed Sections</h4><canvas id="sections-chart" height="120"></canvas></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
